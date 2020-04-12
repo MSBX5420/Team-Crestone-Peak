@@ -4,6 +4,7 @@
 -
 -
 -
+- Zach Johnson
 
 ### Project requirements
 - **Dataset**: Use suggested datasets or any large scale dataset
