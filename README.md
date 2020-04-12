@@ -2,7 +2,7 @@
 ### Members:
 - Jason Engel
 - Julian Beaupre
--
+- Yubing Yang
 - Natalie Garibaldi
 - Zach Johnson
 
