@@ -3,7 +3,7 @@
 - Jason Engel
 -
 -
--
+- Natalie Garibaldi
 - Zach Johnson
 
 ### Project requirements
