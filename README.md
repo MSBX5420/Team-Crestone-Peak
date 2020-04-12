@@ -1,7 +1,7 @@
 # Team-Crestone-Peak
 ### Members:
 - Jason Engel
--
+- Julian Beaupre
 -
 - Natalie Garibaldi
 - Zach Johnson
