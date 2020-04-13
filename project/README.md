@@ -11,6 +11,13 @@
 
 ### Project requirements
 - **Dataset**: [Dataset](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26)
+  - Context
+  >"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
+
+  - Content
+  
+       It contains the authors, the title, the publish date, the description about the story, the main story, and the url.
+
 - **Environment**: AWS EMR
 - **Programming Language**: Spark with Python
 - **Functional Requirements**:
@@ -20,13 +27,3 @@
 - **Performance Requirements**:
   - Your applications should shows horizontal scale (i.e. when we adding more nodes the cluster, the processing should be faster also)
   
-  
-  
-#### Context
-
->"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
-
-#### Content
-
-- It contains the authors, the title, the publish date, the description about the story, the main story, and the url.
-
