@@ -26,6 +26,9 @@
   
 
 ### Project Design
+[Requirements Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/requirements-doc.md)
+
+
 [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/design-doc.md)
 
 
