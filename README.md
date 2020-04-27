@@ -1,32 +1,29 @@
-# Team-Crestone-Peak
-### Members:
+## Requirements Document
+
+
+### **Team Crestone Peak**
 - Jason Engel
+- Zach Johnson
+- Natalie Garibaldi
 - Julian Beaupre
 - Yubing Yang
-- Natalie Garibaldi
-- Zach Johnson
+
 
 ### Project requirements
-- **Dataset**: Use suggested datasets or any large scale dataset
-- **Environment**: Use AWS EMR and other AWS services
-- **Programming Language**: Use Spark with Python
-- **Functional Requirements**:
-  - Ingest: Ingest dataset to Hdfs or S3 and save as Parquet format.
-  - Basic statistics and analysis of the ingested dataset and display (use Jupyter notebook or other type of visualization)
-  - Others: You guys define what you want to achieve in the requirement phase.
+- **Dataset**: [Dataset](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26)
+  - Context
+  >"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
+
+  - Content
+  
+       It contains the authors, the title, the publish date, the description about the story, the main story, and the url.
+
+- **Environment**: AWS EMR
+- **Programming Language**: Spark with Python [Jupyter Notebook](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/cleaning.ipynb)
+- **Functional Requirements**: [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/README.md)
+  - Ingest: Ingest dataset to S3 Bucket
+  - Basic statistics in Jupyter Notebook
+  - Others: We want to use sentiment analysis on the text from different news stations, and potentially create a multiclassifcation problem having different emotions in our sentiment analysis (eg. angry, happy). We could then see the trends and predict how certain news stations react to events like this on a time based and text based scale. We can also look into the relationships between words and try to add context to further help the model understand the text as best as possible.
 - **Performance Requirements**:
   - Your applications should shows horizontal scale (i.e. when we adding more nodes the cluster, the processing should be faster also)
-
-### Timeline
-- **Requirement phase (Due April 12th)**: team discuss functional requirements and come up with a requirement document to define what you want to accomplish. Things to do:
-  - Connect: connect team members through email. Create slack team channels.
-  - Setup: Join Github classroom (https://github.com/MSBX5420), join aws classroom (check your aws classroom to join) 
-  - Discuss: Generate one page (or more thorough) spec documents to layout functional and non-functional requirements etc.
-  - Submit: Create project Github repo inside Github classroom and check in the requirement spec document.
-- **Design, Development and Test (Due April 25th)**:
-  - Use Agile development to have several iterations of design, development and test.
-  - Submit: Check in your design doc and code to Github repo.
-- **Deployment (Due April 28th)**:
-  - Deploy your program to a larger cluster.
-- **Presentation (Due April 28th)**:
-  - Present your work in class
+  
