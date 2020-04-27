@@ -31,6 +31,9 @@
 
 [Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/code/analysis.ipynb)
 
+
+[Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/analysis.ipynb)
+
 **Preprocessing/Cleaning**
 
 
