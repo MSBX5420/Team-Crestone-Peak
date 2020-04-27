@@ -19,7 +19,7 @@
        It contains the authors, the title, the publish date, the description about the story, the main story, and the url.
 
 - **Environment**: AWS EMR
-- **Programming Language**: Spark with Python [Jupyter Notebook](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/cleaning.ipynb)
+- **Programming Language**: Spark with Python [Jupyter Notebook](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/analysis.ipynb)
 - **Functional Requirements**: [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/README.md)
   - Ingest: Ingest dataset to S3 Bucket
   - Basic statistics in Jupyter Notebook
