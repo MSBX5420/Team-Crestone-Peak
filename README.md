@@ -16,8 +16,8 @@
        It contains the authors, the title, the publish date, the description about the story, the main story, and the url.
 
 - **Environment**: AWS EMR
-- **Programming Language**: Spark with Python [Jupyter Notebook](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/analysis.ipynb)
-- **Functional Requirements**: [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/README.md)
+- **Programming Language**: Spark with Python
+- **Functional Requirements**:
   - Ingest: Ingest dataset to S3 Bucket
   - Basic statistics in Jupyter Notebook
   - Others: We want to use sentiment analysis on the text from different news stations, and potentially create a multiclassifcation problem having different emotions in our sentiment analysis (eg. angry, happy). We could then see the trends and predict how certain news stations react to events like this on a time based and text based scale. We can also look into the relationships between words and try to add context to further help the model understand the text as best as possible.
@@ -27,6 +27,7 @@
 
 ### Project Design
 [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/README.md)
+[Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/analysis.ipynb)
 
 **Preprocessing/Cleaning**
 
