@@ -1,6 +1,6 @@
-## Design Doc | Due April 25, 2020
+# Design Doc
 
-### Team Crestone Peak
+## Team Crestone Peak
 - Jason Engel, Zach Johnson, Natalie Garibaldi, Julian Beaupre, Yubing Yang
 
 ### Components
