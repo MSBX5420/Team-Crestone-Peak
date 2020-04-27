@@ -26,13 +26,12 @@
   
 
 ### Project Design
-[Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/design-doc.md)
+[Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/design-doc.md)
 
 
 [Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/code/analysis.ipynb)
 
 
-[Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/analysis.ipynb)
 
 **Preprocessing/Cleaning**
 
