@@ -1,7 +1,4 @@
-## Requirements Document
-
-
-### **Team Crestone Peak**
+## **Team Crestone Peak**
 - Jason Engel
 - Zach Johnson
 - Natalie Garibaldi
@@ -27,3 +24,18 @@
 - **Performance Requirements**:
   - Your applications should shows horizontal scale (i.e. when we adding more nodes the cluster, the processing should be faster also)
   
+
+### Project Design
+[Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/project/README.md)
+
+#### Preprocessing/Cleaning
+
+#### Parsing
+
+#### Models
+
+#### Deployment
+
+#### Conclusion
+
+
