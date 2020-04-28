@@ -36,7 +36,7 @@
   
   
   
-### Project Design
+## Project Design
 
 **Preprocessing/Cleaning**
 
@@ -46,6 +46,23 @@ After loading in our csv in parquet format, the dataframe needed some slight mod
 **Parsing**
 
 In terms of parsing the data, several actions were taken to have our file ready for deployment. We used nltk toolkit for this step. The functions we used for text preprocessing were sent_tokenize_funct, word_tokenize_funct, remove_stopwords_funct, remove_punct_funct, lemma_funct, join_tokens_funct, extract_phrase_funct. These functions were used to tokenize the words into smaller/more manageable lines of text, making it easier to eventually perform sentiment analysis on. All stopwords that do not contribute any meaningful insights to our analysis were also removed. The same is true for meaningless punctuation. Lemmatization was also used to group together the different inflected forms of a word so they could be analysed as a single item.
+
+Tokens Code Snippet:
+```python
+def sent_tokenize_funct(x):
+    return nltk.sent_tokenize(x)
+
+def word_tokenize_funct(x):
+    splitted = [word for line in x for word in line.split()]
+    return splitted
+
+def remove_stopwords_funct(x):
+    from nltk.corpus import stopwords
+    stop_words=set(stopwords.words('english'))
+    filteredSentence = [w for w in x if not w in stop_words]
+    return filteredSentence
+```
+
 
 **Analysis**
 
@@ -77,23 +94,6 @@ def sentiment_word_funct(x):
                 else:
                     sentiment_list.append((first, "Positive"))
     return sentiment_list
-```
-
-
-Tokens Code Snippet:
-```python
-def sent_tokenize_funct(x):
-    return nltk.sent_tokenize(x)
-
-def word_tokenize_funct(x):
-    splitted = [word for line in x for word in line.split()]
-    return splitted
-
-def remove_stopwords_funct(x):
-    from nltk.corpus import stopwords
-    stop_words=set(stopwords.words('english'))
-    filteredSentence = [w for w in x if not w in stop_words]
-    return filteredSentence
 ```
  
 
