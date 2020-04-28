@@ -39,7 +39,6 @@ Functional requirements can benefit and add value to a business. In the case of 
 
 
 ### Description of math
-Emotion over time
 After our analysis and processing of the language, we will find our ‘score’ for each article and their given emotions. From here, we will look at how the data is distributed and scale or modify it if necessary. A value will be given so we can show the range of emotions for various categories in a time-series visual to see the progression of the writings.
 
 ### Description of models
