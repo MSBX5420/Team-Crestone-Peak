@@ -63,7 +63,7 @@ After our job was ran, we found that the top negative words were “death,” �
 
 
 :---:|:---:
-| ![](/images/plots/top20NegativeKeywordsFreq.png){: width="500px"}  |  ![](/plots/top20PositiveKeywordsFreq.png){: width="500px"} |
+| ![](/plots/top20NegativeKeywordsFreq.png){: width="500px"}  |  ![](/plots/top20PositiveKeywordsFreq.png){: width="500px"} |
 
 
 
