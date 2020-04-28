@@ -8,15 +8,14 @@
 
 [Requirements Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/requirements-doc.md)
 
-
 [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/design-doc.md)
-
 
 [Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/code/analysis.ipynb)
 
 
 ### Data
-- **Dataset**: [Dataset](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26)
+
+- **[Dataset]**(https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26):
   - Context
   >"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
 
@@ -26,6 +25,7 @@
 
 
 ### Software
+
 - **Environment**: AWS EMR
 - **Programming Language**: Spark with Python
 - **Functional Requirements**:
@@ -39,13 +39,16 @@
   ### Project Design
 
 **Preprocessing/Cleaning**
+
 After loading in our csv in parquet format, the dataframe needed some slight modifications. First there were quotations that needed to be removed in the author column using regexp_replace. In the original csv, the publish_date column was a string, so we had to change this to DateType form. From here we had to check if there were any na values for the description as well as text columns before moving on.
 
 
 **Parsing**
+
 In terms of parsing the data, several actions were taken to have our file ready for deployment. We used nltk toolkit for this step. The functions we used for text preprocessing were sent_tokenize_funct, word_tokenize_funct, remove_stopwords_funct, remove_punct_funct, lemma_funct, join_tokens_funct, extract_phrase_funct. These functions were used to tokenize the words into smaller/more manageable lines of text, making it easier to eventually perform sentiment analysis on. All stopwords that do not contribute any meaningful insights to our analysis were also removed. The same is true for meaningless punctuation. Lemmatization was also used to group together the different inflected forms of a word so they could be analysed as a single item.
 
 **Analysis**
+
 Before we could create our models, we needed to assign values to the phrases in our data frame. Using SentimentIntensityAnalyzer we were able to assign scores to the phrases within our data based on sentiment. Phrases were assigned values of either Negative, Neutral and Positive based on the sentiment associated with them. This data was then converted from an rdd to a spark dataframe. From here we were able to count how many terms in our dataframe were associated with each of the three classifications. There were 239980 values for neutral, 43136 for positive, and 34255 associated with a negative classification. The next step was to extract the top 100 negative and top 100 positive keywords and convert these results into a pandas dataframe. The next step was to extract the top 20 words from each of these new data frames and visualize them with bar charts. Another way to visualize these results that we used were word clouds. We plotted the top 100 negative and top 100 positive words in word clouds that display which words were used most frequently in positive and negative contexts.
 
 
