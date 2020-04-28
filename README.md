@@ -15,7 +15,7 @@
 
 ### Data
 
-- **[Dataset]**(https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26):
+- [Dataset](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26):
   - Context
   >"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
 
@@ -36,7 +36,9 @@
   - Your applications should shows horizontal scale (i.e. when we adding more nodes the cluster, the processing should be faster also)
   
   
-  ### Project Design
+  
+  
+### Project Design
 
 **Preprocessing/Cleaning**
 
@@ -99,10 +101,12 @@ def remove_stopwords_funct(x):
 
 
 **Deployment**
+
 For our deployment, we first ingested the data into our local directory in the s3 class bucket. We then used our python script in jupyter notebook  to run the spark job on the dev cluster. The data was taken directly from the s3 bucket, which allowed us to submit the job with no issues. Deploying this model, we wanted to make it scalable, so we tested on both clusters (3 and 20 nodes). This was difficult to interpret because the clusters were both busy at varying times.
 
 
 **Conclusion**
+
 After our job was ran, we found that the top negative words were “death,” “difficulty,” and “risk.” The top positive words were “help,” “hand,” and “number.” These are interesting words to surface when looking at negative and positive sentiment because “help” isn’t necessarily a positive word. One can be asking for help, which can be seen in a negative light, or one can be thankful for help, which has a more positive meaning behind it. Same goes for “hand” and “number.” Both words can be used in several scenarios positively or negatively. Other words such as “death” and “risk” are words that tend to be used more negatively. Being able to see what words are used in negative and positive settings is interesting especially in a situation like the Coronavirus because we can see and better understand how people react in a crisis. If we were able to dive into it more, we would most likely see more emotions in the words used. We could also use a time series analysis to possibly witness the six stages of grief through the words people use over a period of time. This would require a more in-depth multi-class sentiment analysis  model but would be very interesting.
 
 
