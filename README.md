@@ -37,18 +37,46 @@
 
 
 **Preprocessing/Cleaning**
+After loading in our csv in parquet format, the dataframe needed some slight modifications. First there were quotations that needed to be removed in the author column using regexp_replace. In the original csv, the publish_date column was a string, so we had to change this to DateType form. From here we had to check if there were any na values for the description as well as text columns before moving on.
 
 
 **Parsing**
+In terms of parsing the data, several actions were taken to have our file ready for deployment. We used nltk toolkit for this step. The functions we used for text preprocessing were sent_tokenize_funct, word_tokenize_funct, remove_stopwords_funct, remove_punct_funct, lemma_funct, join_tokens_funct, extract_phrase_funct. These functions were used to tokenize the words into smaller/more manageable lines of text, making it easier to eventually perform sentiment analysis on. All stopwords that do not contribute any meaningful insights to our analysis were also removed. The same is true for meaningless punctuation. Lemmatization was also used to group together the different inflected forms of a word so they could be analysed as a single item.
 
+**Analysis**
+Before we could create our models, we needed to assign values to the phrases in our data frame. Using SentimentIntensityAnalyzer we were able to assign scores to the phrases within our data based on sentiment. Phrases were assigned values of either Negative, Neutral and Positive based on the sentiment associated with them. This data was then converted from an rdd to a spark dataframe. From here we were able to count how many terms in our dataframe were associated with each of the three classifications. There were 239980 values for neutral, 43136 for positive, and 34255 associated with a negative classification. The next step was to extract the top 100 negative and top 100 positive keywords and convert these results into a pandas dataframe. The next step was to extract the top 20 words from each of these new data frames and visualize them with bar charts. Another way to visualize these results that we used were word clouds. We plotted the top 100 negative and top 100 positive words in word clouds that display which words were used most frequently in positive and negative contexts.
 
-**Models**
+The model uses sentiment analysis to interpret and classify emotions within the text of the articles. The emotions we are classifying are the six stages of grief shown over time: denial, anger, bargaining, depression, acceptance, and finding meaning. Because the articles are from multiple locations, we can describe the stage where different locations are in, independent of one another while also getting an overall consensus of the world’s feeling by giving each article an emotional rating. We used Natural Language Toolkit (NLTK) to classify articles and parts of articles into a predefined sentiment. The tokenization method was used to split strings into smaller tokens to make the language accurately processed. We removed stop words within text to provide more accurate scores and minimize noise within the contents of the articles. Other noise that needs to be removed besides stop words are special characters, mostly used for punctuation. In order to execute the sentiment analysis, the tokens need to be converted to a dictionary. Once we have the dictionary the next step is to split the data into  training and testing sets. From here we can build and test the models. 
+ 
 
 
 **Deployment**
+For our deployment, we first ingested the data into our local directory in the s3 class bucket. We then used our python script in jupyter notebook  to run the spark job on the dev cluster. The data was taken directly from the s3 bucket, which allowed us to submit the job with no issues. Deploying this model, we wanted to make it scalable, so we tested on both clusters (3 and 20 nodes). This was difficult to interpret because the clusters were both busy at varying times.
 
 
 **Conclusion**
+After our job was ran, we found that the top negative words were “death,” “difficulty,” and “risk.” The top positive words were “help,” “hand,” and “number.” These are interesting words to surface when looking at negative and positive sentiment because “help” isn’t necessarily a positive word. One can be asking for help, which can be seen in a negative light, or one can be thankful for help, which has a more positive meaning behind it. Same goes for “hand” and “number.” Both words can be used in several scenarios positively or negatively. Other words such as “death” and “risk” are words that tend to be used more negatively. Being able to see what words are used in negative and positive settings is interesting especially in a situation like the Coronavirus because we can see and better understand how people react in a crisis. If we were able to dive into it more, we would most likely see more emotions in the words used. We could also use a time series analysis to possibly witness the six stages of grief through the words people use over a period of time. This would require a more in-depth multi-class sentiment analysis  model but would be very interesting.
+
+
+![](/images/plots/top20KeywordsFreq.png)
+
+
+
+:---:|:---:
+| ![](/images/plots/top20NegativeKeywordsFreq.png){: width="500px"}  |  ![](/images/plots/top20PositiveKeywordsFreq.png){: width="500px"} |
+
+
+
+:---:|:---:
+| ![](/images/plots/wordCloud_Negative.png){: width="500px"}  |  ![](/images/plots/wordCloud_Positive.png){: width="500px"} |
+
+
+
+![](/images/plots/wordCloud.png)
+
+
+
+
 
 
 
