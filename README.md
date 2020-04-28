@@ -5,6 +5,7 @@
 
 [Git-Repository](https://github.com/MSBX5420/Team-Crestone-Peak), [Requirements Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/requirements-doc.md), [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/design-doc.md), [Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/code/analysis.ipynb)
 
+***
 
 ### [Data](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26)
 
