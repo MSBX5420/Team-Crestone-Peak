@@ -48,7 +48,36 @@ In terms of parsing the data, several actions were taken to have our file ready 
 **Analysis**
 Before we could create our models, we needed to assign values to the phrases in our data frame. Using SentimentIntensityAnalyzer we were able to assign scores to the phrases within our data based on sentiment. Phrases were assigned values of either Negative, Neutral and Positive based on the sentiment associated with them. This data was then converted from an rdd to a spark dataframe. From here we were able to count how many terms in our dataframe were associated with each of the three classifications. There were 239980 values for neutral, 43136 for positive, and 34255 associated with a negative classification. The next step was to extract the top 100 negative and top 100 positive keywords and convert these results into a pandas dataframe. The next step was to extract the top 20 words from each of these new data frames and visualize them with bar charts. Another way to visualize these results that we used were word clouds. We plotted the top 100 negative and top 100 positive words in word clouds that display which words were used most frequently in positive and negative contexts.
 
-Example Code:
+
+Sentiment Analysis Code Snippet:
+```python
+def sentiment_word_funct(x):
+    from nltk.sentiment.vader import SentimentIntensityAnalyzer
+    analyzer = SentimentIntensityAnalyzer() 
+    senti_list_temp = []
+    for i in x:
+        y = ''.join(i) 
+        vs = analyzer.polarity_scores(y)
+        senti_list_temp.append((y, vs))
+        senti_list_temp = [w for w in senti_list_temp if w]
+    sentiment_list  = []
+    for j in senti_list_temp:
+        first = j[0]
+        second = j[1]
+    
+        for (k,v) in second.items():
+            if k == 'compound':
+                if v < 0.0:
+                    sentiment_list.append((first, "Negative"))
+                elif v == 0.0:
+                    sentiment_list.append((first, "Neutral"))
+                else:
+                    sentiment_list.append((first, "Positive"))
+    return sentiment_list
+```
+
+
+Tokens Code Snippet:
 ```python
 def sent_tokenize_funct(x):
     return nltk.sent_tokenize(x)
