@@ -13,13 +13,11 @@
 [Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/code/analysis.ipynb)
 
 
-### Data
+### [Data](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26)
 
-- [Dataset](https://www.kaggle.com/ryanxjhan/cbc-news-coronavirus-articles-march-26):
-  - Context
+- Context
   >"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
-
-  - Content
+- Content
   
        It contains the authors, the title, the publish date, the description about the story, the main story, and the url.
 
