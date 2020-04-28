@@ -48,7 +48,21 @@ In terms of parsing the data, several actions were taken to have our file ready 
 **Analysis**
 Before we could create our models, we needed to assign values to the phrases in our data frame. Using SentimentIntensityAnalyzer we were able to assign scores to the phrases within our data based on sentiment. Phrases were assigned values of either Negative, Neutral and Positive based on the sentiment associated with them. This data was then converted from an rdd to a spark dataframe. From here we were able to count how many terms in our dataframe were associated with each of the three classifications. There were 239980 values for neutral, 43136 for positive, and 34255 associated with a negative classification. The next step was to extract the top 100 negative and top 100 positive keywords and convert these results into a pandas dataframe. The next step was to extract the top 20 words from each of these new data frames and visualize them with bar charts. Another way to visualize these results that we used were word clouds. We plotted the top 100 negative and top 100 positive words in word clouds that display which words were used most frequently in positive and negative contexts.
 
-The model uses sentiment analysis to interpret and classify emotions within the text of the articles. The emotions we are classifying are the six stages of grief shown over time: denial, anger, bargaining, depression, acceptance, and finding meaning. Because the articles are from multiple locations, we can describe the stage where different locations are in, independent of one another while also getting an overall consensus of the world’s feeling by giving each article an emotional rating. We used Natural Language Toolkit (NLTK) to classify articles and parts of articles into a predefined sentiment. The tokenization method was used to split strings into smaller tokens to make the language accurately processed. We removed stop words within text to provide more accurate scores and minimize noise within the contents of the articles. Other noise that needs to be removed besides stop words are special characters, mostly used for punctuation. In order to execute the sentiment analysis, the tokens need to be converted to a dictionary. Once we have the dictionary the next step is to split the data into  training and testing sets. From here we can build and test the models. 
+Example Code:
+```python
+def sent_tokenize_funct(x):
+    return nltk.sent_tokenize(x)
+
+def word_tokenize_funct(x):
+    splitted = [word for line in x for word in line.split()]
+    return splitted
+
+def remove_stopwords_funct(x):
+    from nltk.corpus import stopwords
+    stop_words=set(stopwords.words('english'))
+    filteredSentence = [w for w in x if not w in stop_words]
+    return filteredSentence
+```
  
 
 
