@@ -1,7 +1,4 @@
-## **Team Crestone Peak**
-- Jason Engel, Zach Johnson, Natalie Garibaldi, Julian Beaupre, Yubing Yang
 ***
-
 
 [Git-Repository](https://github.com/MSBX5420/Team-Crestone-Peak), [Requirements Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/requirements-doc.md), [Design Doc](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/design-doc.md), [Code](https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/code/analysis.ipynb)
 
