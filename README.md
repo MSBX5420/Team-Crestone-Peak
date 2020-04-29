@@ -113,6 +113,11 @@ After our job was ran, we found that the top negative words were “death,” �
 | ![](/plots/wordCloud_Negative.png){: width="500px"}  |  ![](/plots/wordCloud_Positive.png){: width="500px"} |
 
 
+<p align="center">
+  <img width="500" height="500" src="/plots/wordCloud_Negative.png">
+</p>
+
+
 
 
 
