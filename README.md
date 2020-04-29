@@ -11,6 +11,7 @@
 - Context
   >"Has the news media been overreacting or under-reacting during the development of COVID-19? What are the media's main focuses? How is the news correlated to public reactions or policy changes? You might find many insights with more than 3,500 CBC news articles."
 
+***
 
 ### Software
 
@@ -23,7 +24,8 @@
 - **Performance Requirements**:
   - Your applications should shows horizontal scale (i.e. when we adding more nodes the cluster, the processing should be faster also)
   
-  
+
+***
   
   
 ## Project Design
@@ -32,6 +34,7 @@
 
 After loading in our csv in parquet format, the dataframe needed some slight modifications. First there were quotations that needed to be removed in the author column using regexp_replace. In the original csv, the publish_date column was a string, so we had to change this to DateType form. From here we had to check if there were any na values for the description as well as text columns before moving on.
 
+***
 
 **Parsing**
 
@@ -55,7 +58,7 @@ def remove_stopwords_funct(x):
     
 ```
 
-
+***
 
 
 **Deployment**
@@ -83,7 +86,7 @@ ssh -N -f -L localhost:9876:localhost:9876 -i Leed_HadoopKeypair.pem hadoop@ec2-
 
 ```
 
-
+***
 
 
 **Analysis**
@@ -119,7 +122,7 @@ def sentiment_word_funct(x):
 ```
  
 
-
+***
 
 **Conclusion**
 
