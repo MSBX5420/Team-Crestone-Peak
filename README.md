@@ -58,6 +58,21 @@ def remove_stopwords_funct(x):
 
 For our deployment, we first ingested the data into our local directory in the s3 class bucket. We then used our python script in jupyter notebook  to run the spark job on the dev cluster. The data was taken directly from the s3 bucket, which allowed us to submit the job with no issues. Deploying this model, we wanted to make it scalable, so we tested on both clusters (3 and 20 nodes). This was difficult to interpret because the clusters were both busy at varying times.
 
+```bash
+scp -i Leed_HadoopKeypair.pem cleaning.ipynb hadoop@ec2-18-236-112-13.us-west-2.compute.amazonaws.com:/home/hadoop/notebooks/team-crestone-peak/
+```
+
+```bash
+aws s3 ls s3://msbx5420-2020
+```
+
+
+```bash
+ssh -i Leed_HadoopKeypair.pem hadoop@ec2-18-236-112-13.us-west-2.compute.amazonaws.com
+
+ssh -N -f -L localhost:9876:localhost:9876 -i Leed_HadoopKeypair.pem hadoop@ec2-18-236-112-13.us-west-2.compute.amazonaws.com
+
+```
 
 
 **Analysis**
