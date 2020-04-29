@@ -138,8 +138,3 @@ Plots:
 | ![](/plots/top20PositiveKeywordsFreq.png) |
 | ![](/plots/wordCloud_Negative.png)  |
 | ![](/plots/wordCloud_Positive.png) |
-
-
-<div style="align: left">
-  ![](/plots/wordCloud_Positive.png) 
-</div>
