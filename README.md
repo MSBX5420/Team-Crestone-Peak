@@ -54,6 +54,12 @@ def remove_stopwords_funct(x):
 ```
 
 
+**Deployment**
+
+For our deployment, we first ingested the data into our local directory in the s3 class bucket. We then used our python script in jupyter notebook  to run the spark job on the dev cluster. The data was taken directly from the s3 bucket, which allowed us to submit the job with no issues. Deploying this model, we wanted to make it scalable, so we tested on both clusters (3 and 20 nodes). This was difficult to interpret because the clusters were both busy at varying times.
+
+
+
 **Analysis**
 
 Before we could create our models, we needed to assign values to the phrases in our data frame. Using SentimentIntensityAnalyzer we were able to assign scores to the phrases within our data based on sentiment. Phrases were assigned values of either Negative, Neutral and Positive based on the sentiment associated with them. This data was then converted from an rdd to a spark dataframe. From here we were able to count how many terms in our dataframe were associated with each of the three classifications. There were 239980 values for neutral, 43136 for positive, and 34255 associated with a negative classification. The next step was to extract the top 100 negative and top 100 positive keywords and convert these results into a pandas dataframe. The next step was to extract the top 20 words from each of these new data frames and visualize them with bar charts. Another way to visualize these results that we used were word clouds. We plotted the top 100 negative and top 100 positive words in word clouds that display which words were used most frequently in positive and negative contexts.
@@ -86,12 +92,6 @@ def sentiment_word_funct(x):
     return sentiment_list
 ```
  
-
-
-**Deployment**
-
-For our deployment, we first ingested the data into our local directory in the s3 class bucket. We then used our python script in jupyter notebook  to run the spark job on the dev cluster. The data was taken directly from the s3 bucket, which allowed us to submit the job with no issues. Deploying this model, we wanted to make it scalable, so we tested on both clusters (3 and 20 nodes). This was difficult to interpret because the clusters were both busy at varying times.
-
 
 **Conclusion**
 
