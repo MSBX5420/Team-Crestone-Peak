@@ -111,7 +111,7 @@ After our job was ran, we found that the top negative words were “death,” �
 
 
 <p align="center">
-  <img width="500" height="500" src="/plots/wordCloud_Negative.png">
+  <img width="500" height="500" src="https://github.com/MSBX5420/Team-Crestone-Peak/blob/master/plots/top20KeywordsFreq.png">
 </p>
 
 
