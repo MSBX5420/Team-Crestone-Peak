@@ -111,8 +111,14 @@ After our job was ran, we found that the top negative words were “death,” �
 
 
 <p align="center">
-  <img width="500" src="plots/top20KeywordsFreq.png">
+  <img width="1000" src="plots/top20KeywordsFreq.png">
+  <img width="1000" src="plots/wordCloud.png">
+  <img width="1000" src="plots/top20NegativeKeywordsFreq.png">
+  <img width="1000" src="plots/wordCloud_Negative.png">
+  <img width="1000" src="plots/wordCloud_Positive.png">
 </p>
+
+
 
 
 
