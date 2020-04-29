@@ -97,34 +97,16 @@ def sentiment_word_funct(x):
 
 After our job was ran, we found that the top negative words were “death,” “difficulty,” and “risk.” The top positive words were “help,” “hand,” and “number.” These are interesting words to surface when looking at negative and positive sentiment because “help” isn’t necessarily a positive word. One can be asking for help, which can be seen in a negative light, or one can be thankful for help, which has a more positive meaning behind it. Same goes for “hand” and “number.” Both words can be used in several scenarios positively or negatively. Other words such as “death” and “risk” are words that tend to be used more negatively. Being able to see what words are used in negative and positive settings is interesting especially in a situation like the Coronavirus because we can see and better understand how people react in a crisis. If we were able to dive into it more, we would most likely see more emotions in the words used. We could also use a time series analysis to possibly witness the six stages of grief through the words people use over a period of time. This would require a more in-depth multi-class sentiment analysis  model but would be very interesting.
 
-:---:|:---:
-| ![](/plots/top20KeywordsFreq.png){: width="500px"} | ![](/plots/wordCloud.png){: width="500px"} |
-
-
-:---:|:---:
-| ![](/plots/top20NegativeKeywordsFreq.png){: width="500px"}  |  ![](/plots/top20PositiveKeywordsFreq.png){: width="500px"} |
-
-
-
-:---:|:---:
-| ![](/plots/wordCloud_Negative.png){: width="500px" align="center"}  |  ![](/plots/wordCloud_Positive.png){: width="500px"} |
-
-
 <p align="center">
-  <img width="1000" src="plots/top20KeywordsFreq.png">
-  <img width="1000" src="plots/wordCloud.png">
-  <img width="1000" src="plots/top20NegativeKeywordsFreq.png">
-  <img width="1000" src="plots/wordCloud_Negative.png">
-  <img width="1000" src="plots/wordCloud_Positive.png">
+:---:|:---:
+| ![](/plots/top20KeywordsFreq.png){: width="800px"} | ![](/plots/wordCloud.png){: width="800px"} |
+
+
+:---:|:---:
+| ![](/plots/top20NegativeKeywordsFreq.png){: width="800px"}  |  ![](/plots/top20PositiveKeywordsFreq.png){: width="800px"} |
+
+
+
+:---:|:---:
+| ![](/plots/wordCloud_Negative.png){: width="800px"}  |  ![](/plots/wordCloud_Positive.png){: width="800px"} |
 </p>
-
-
-
-
-
-
-
-
-
-
-
