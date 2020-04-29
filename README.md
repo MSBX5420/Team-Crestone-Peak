@@ -34,6 +34,29 @@
 
 After loading in our csv in parquet format, the dataframe needed some slight modifications. First there were quotations that needed to be removed in the author column using regexp_replace. In the original csv, the publish_date column was a string, so we had to change this to DateType form. From here we had to check if there were any na values for the description as well as text columns before moving on.
 
+Packages:
+```python
+
+# show all output from a cell
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+
+# import packages
+from pyspark import SparkContext
+from pyspark.sql import SparkSession, SQLContext
+from pyspark.sql.functions import *
+from pyspark.sql.types import DateType
+
+import pandas as pd
+import string
+import re
+import nltk
+import matplotlib.pyplot as plt
+# !pip install wordcloud
+from wordcloud import WordCloud
+
+```
+
 ***
 
 **Parsing**
